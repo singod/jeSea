@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jeSea</title>
+    <script type="text/javascript" src="js/jesea.js"></script>
+</head>
+<body>
+<ul id="testul">
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+    <li>111111111111111</li>
+</ul>
+<script type="text/javascript">
+    jeSea.config({
+        paths:{
+            jquery:"http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min"
+        },
+        urlArgs:"?jeload=" + +new Date()
+    });
+    jeSea.use(
+        [
+            'jquery', 
+            "http://jemui.com/uidoc/js/modules/jeDate",
+            "./js/common.js"
+        ]
+        ,function () {
+            var len = $("#testul li").css({color:"#ff0000"});
+            console.log(len)
+        }
+    );
+
+</script>
+</body>
+</html>
