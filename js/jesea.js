@@ -1,3 +1,9 @@
+/**
+ @Name : jeSea v1.0 轻量级文件加载
+ @Author: chen guojun
+ @Date: 2017-05-20
+ @官网：http://www.jemui.com/ 或 https://github.com/singod/jeSea
+ */
 ;(function ( window, factory ) {
     window.jeSea = factory();
 })( this, function () {
@@ -17,7 +23,11 @@
             return mix(seaset, opts || {});
         },
         use : function (srcurl,sucfun) {
-            new loadrun(srcurl,sucfun);
+            if(srcurl && typeof (srcurl) == "function"){
+                this.ready(srcurl);
+            }else {
+                new loadrun(srcurl,sucfun);
+            }
         },
         ready: function ( callback ) {
             if ( document.readyState === "complete" ) {
